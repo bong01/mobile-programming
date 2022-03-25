@@ -10,18 +10,25 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.MobileProgramming">
 <!--        <activity-->
-<!--                android:name=".week04.AutoCompleteActivity"-->
+<!--                android:name=".week04.TextInputActivity"-->
 <!--                android:exported="true"/>-->
+         <activity
+         android:name=".week04.TextWatcherActivity"
+         android:exported="true"/>
+        <activity
+                android:name=".week03.AutoCompleteActivity"
+                android:exported="true"/>
         <activity
                 android:name=".week03.ToggleButtonActivity"
                 android:exported="true"/>
         <activity
                 android:name=".week03.RadioGroupActivity"
                 android:exported="true"/>
-        <activity android:name=".week03.BmiActivity"
-                  android:exported="true"/>
         <activity
-                android:name=".week03.AutoCompleteActivity"
+                android:name=".week03.BmiActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".week04.TextInputActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
