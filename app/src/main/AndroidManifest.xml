@@ -10,11 +10,14 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.MobileProgramming">
 <!--        <activity-->
-<!--                android:name=".week04.MediaPlayerActivity"-->
+<!--                android:name=".week04.LayoutDesignActivity"-->
 <!--                android:exported="true"/>-->
          <activity
-         android:name=".week04.TextInputActivity"
+         android:name=".week04.MediaPlayerActivity"
          android:exported="true"/>
+        <activity
+                android:name=".week04.TextInputActivity"
+                android:exported="true"/>
         <activity
                 android:name=".week04.TextWatcherActivity"
                 android:exported="true"/>
@@ -31,7 +34,7 @@
                 android:name=".week03.BmiActivity"
                 android:exported="true"/>
         <activity
-                android:name=".week04.MediaPlayerActivity"
+                android:name=".week04.LayoutDesignActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
