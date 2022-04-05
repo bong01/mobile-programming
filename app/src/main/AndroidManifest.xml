@@ -9,12 +9,18 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.MobileProgramming">
+        <activity
+                android:name=".week05.VocabActivity"
+                android:exported="true"/>
 <!--        <activity-->
-<!--                android:name=".week04.LayoutDesignActivity"-->
+<!--                android:name=".week05.RecyclerViewActivity"-->
 <!--                android:exported="true"/>-->
-         <activity
-         android:name=".week04.MediaPlayerActivity"
-         android:exported="true"/>
+        <activity
+                android:name=".week04.LayoutDesignActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".week04.MediaPlayerActivity"
+                android:exported="true"/>
         <activity
                 android:name=".week04.TextInputActivity"
                 android:exported="true"/>
@@ -34,7 +40,7 @@
                 android:name=".week03.BmiActivity"
                 android:exported="true"/>
         <activity
-                android:name=".week04.LayoutDesignActivity"
+                android:name=".week05.RecyclerViewActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -43,5 +49,10 @@
             </intent-filter>
         </activity>
     </application>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE"/>
+        </intent>
+    </queries>
 
 </manifest>
