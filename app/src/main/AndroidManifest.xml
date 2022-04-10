@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="dev.bong.mobileprogramming">
 
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE"/>
+        </intent>
+    </queries>
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -10,17 +16,20 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.MobileProgramming">
         <activity
+                android:name=".week06.LifecycleActivity"
+                android:exported="true"/>
+        <activity
                 android:name=".week05.VocabActivity"
                 android:exported="true"/>
-<!--        <activity-->
-<!--                android:name=".week05.RecyclerViewActivity"-->
-<!--                android:exported="true"/>-->
+        <activity
+                android:name=".week05.RecyclerViewActivity"
+                android:exported="true"/>
         <activity
                 android:name=".week04.LayoutDesignActivity"
                 android:exported="true"/>
-        <activity
-                android:name=".week04.MediaPlayerActivity"
-                android:exported="true"/>
+<!--        <activity-->
+<!--                android:name=".week04.MediaPlayerActivity"-->
+<!--                android:exported="true"/>-->
         <activity
                 android:name=".week04.TextInputActivity"
                 android:exported="true"/>
@@ -40,7 +49,7 @@
                 android:name=".week03.BmiActivity"
                 android:exported="true"/>
         <activity
-                android:name=".week05.RecyclerViewActivity"
+                android:name=".week04.MediaPlayerActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -49,10 +58,5 @@
             </intent-filter>
         </activity>
     </application>
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.TTS_SERVICE"/>
-        </intent>
-    </queries>
 
 </manifest>
