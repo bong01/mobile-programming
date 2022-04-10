@@ -9,7 +9,7 @@ import dev.bong.mobileprogramming.R
 
 class VocabAdapter(val items: ArrayList<VocabData>) : RecyclerView.Adapter<VocabAdapter.ViewHolder>() {
     interface OnItemClickListener {
-        fun OnItemClick(data: VocabData)
+        fun OnItemClick(data: VocabData, position: Int)
     }
 
     fun moveItem(oldPos: Int, newPos: Int) {
@@ -28,17 +28,11 @@ class VocabAdapter(val items: ArrayList<VocabData>) : RecyclerView.Adapter<Vocab
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView = itemView.findViewById<TextView>(R.id.textView)
+        val meaningView = itemView.findViewById<TextView>(R.id.meaningView)
 
         init {
             textView.setOnClickListener {
-                itemClickListener?.OnItemClick(items[adapterPosition])
-                val textView2 = itemView.findViewById<TextView>(R.id.textView2)
-                textView2.text = items[adapterPosition].meaning
-                if (textView2.visibility == View.GONE) {
-                    textView2.visibility = View.VISIBLE
-                } else if (textView2.visibility == View.VISIBLE) {
-                    textView2.visibility = View.GONE
-                }
+                itemClickListener?.OnItemClick(items[adapterPosition], adapterPosition)
             }
         }
     }
@@ -50,13 +44,16 @@ class VocabAdapter(val items: ArrayList<VocabData>) : RecyclerView.Adapter<Vocab
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.textView.text = items[position].word
+        holder.meaningView.text = items[position].meaning
+        if (!items[position].isOpen) {
+            holder.meaningView.visibility = View.GONE
+        } else {
+            holder.meaningView.visibility = View.VISIBLE
+        }
     }
 
     override fun getItemCount(): Int {
         return items.size
     }
 
-    override fun getItemViewType(position: Int): Int {
-        return position
-    }
 }

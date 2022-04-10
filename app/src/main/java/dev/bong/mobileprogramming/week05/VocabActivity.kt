@@ -56,11 +56,13 @@ class VocabActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         adapter = VocabAdapter(data)
         adapter.itemClickListener = object : VocabAdapter.OnItemClickListener {
-            override fun OnItemClick(data: VocabData) {
+            override fun OnItemClick(data: VocabData, position: Int) {
                 if (ttsReady) {
                     tts.speak(data.word, TextToSpeech.QUEUE_FLUSH, null, null)
                 }
                 Toast.makeText(applicationContext, data.meaning, Toast.LENGTH_SHORT).show()
+                data.isOpen = !data.isOpen
+                adapter.notifyItemChanged(position)
             }
         }
         recyclerView.adapter = adapter
