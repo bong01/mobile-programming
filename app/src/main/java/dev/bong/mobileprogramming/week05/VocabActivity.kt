@@ -3,17 +3,17 @@ package dev.bong.mobileprogramming.week05
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
-import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dev.bong.mobileprogramming.R
+import dev.bong.mobileprogramming.databinding.ActivityVocabBinding
 import java.util.*
 import kotlin.collections.ArrayList
 
 class VocabActivity : AppCompatActivity() {
-    lateinit var recyclerView: RecyclerView
+    lateinit var binding: ActivityVocabBinding
     lateinit var adapter: VocabAdapter
     lateinit var tts: TextToSpeech
     var ttsReady = false
@@ -21,7 +21,8 @@ class VocabActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_vocab)
+        binding = ActivityVocabBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         initData()
         initRecyclerView()
         initTTS()
@@ -43,7 +44,18 @@ class VocabActivity : AppCompatActivity() {
     }
 
     private fun initData() {
+        try {
+            val scan2 = Scanner(openFileInput("out.txt"))
+            readFileScan(scan2)
+        } catch (e: Exception) {
+            Toast.makeText(this, "추가된 단어 없음", Toast.LENGTH_SHORT).show()
+        }
+
         val scan = Scanner(resources.openRawResource(R.raw.words))
+        readFileScan(scan)
+    }
+
+    private fun readFileScan(scan: Scanner) {
         while (scan.hasNextLine()) {
             val word = scan.nextLine()
             val meaning = scan.nextLine()
@@ -52,8 +64,7 @@ class VocabActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        binding.recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         adapter = VocabAdapter(data)
         adapter.itemClickListener = object : VocabAdapter.OnItemClickListener {
             override fun OnItemClick(data: VocabData, position: Int) {
@@ -65,7 +76,7 @@ class VocabActivity : AppCompatActivity() {
                 adapter.notifyItemChanged(position)
             }
         }
-        recyclerView.adapter = adapter
+        binding.recyclerView.adapter = adapter
 
         val simpleItemTouchCallback =
             object : ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP or ItemTouchHelper.DOWN, ItemTouchHelper.LEFT) {
@@ -84,6 +95,6 @@ class VocabActivity : AppCompatActivity() {
             }
 
         val itemTouchHelper = ItemTouchHelper(simpleItemTouchCallback)
-        itemTouchHelper.attachToRecyclerView(recyclerView)
+        itemTouchHelper.attachToRecyclerView(binding.recyclerView)
     }
 }

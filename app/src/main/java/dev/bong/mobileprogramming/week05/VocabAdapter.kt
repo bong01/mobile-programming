@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import dev.bong.mobileprogramming.R
+import dev.bong.mobileprogramming.databinding.RowBinding
 
 class VocabAdapter(val items: ArrayList<VocabData>) : RecyclerView.Adapter<VocabAdapter.ViewHolder>() {
     interface OnItemClickListener {
@@ -26,29 +27,26 @@ class VocabAdapter(val items: ArrayList<VocabData>) : RecyclerView.Adapter<Vocab
 
     var itemClickListener: OnItemClickListener? = null
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textView = itemView.findViewById<TextView>(R.id.textView)
-        val meaningView = itemView.findViewById<TextView>(R.id.meaningView)
-
+    inner class ViewHolder(val binding: RowBinding) : RecyclerView.ViewHolder(binding.root) {
         init {
-            textView.setOnClickListener {
+            binding.textView.setOnClickListener {
                 itemClickListener?.OnItemClick(items[adapterPosition], adapterPosition)
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.row, parent, false)
-        return ViewHolder(view)
+        val binding = RowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textView.text = items[position].word
-        holder.meaningView.text = items[position].meaning
+        holder.binding.textView.text = items[position].word
+        holder.binding.meaningView.text = items[position].meaning
         if (!items[position].isOpen) {
-            holder.meaningView.visibility = View.GONE
+            holder.binding.meaningView.visibility = View.GONE
         } else {
-            holder.meaningView.visibility = View.VISIBLE
+            holder.binding.meaningView.visibility = View.VISIBLE
         }
     }
 

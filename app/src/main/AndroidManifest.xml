@@ -19,11 +19,14 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.MobileProgramming">
         <activity
-                android:name=".week06.ExplicitIntentActivity"
+                android:name=".week06.AddVocActivity"
                 android:exported="true"/>
         <!-- <activity -->
-        <!-- android:name=".week06.ImplicitIntentActivity" -->
+        <!-- android:name=".week06.IntroActivity" -->
         <!-- android:exported="true"/> -->
+        <activity
+                android:name=".week06.ImplicitIntentActivity"
+                android:exported="true"/>
         <activity
                 android:name=".week06.LifecycleActivity"
                 android:exported="true"/>
@@ -58,7 +61,7 @@
                 android:name=".week03.BmiActivity"
                 android:exported="true"/>
         <activity
-                android:name=".week06.ImplicitIntentActivity"
+                android:name=".week06.IntroActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
