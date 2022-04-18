@@ -11,6 +11,18 @@
     <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.CAMERA"/>
 
+    <permission
+            android:name="dev.bong.mobileprogramming"
+            android:description="@string/permdescription"
+            android:label="@string/app_name"
+            android:protectionLevel="dangerous"/>
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN"/>
+        </intent>
+    </queries>
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -18,12 +30,15 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.MobileProgramming">
+        <!-- <activity -->
+        <!-- android:name=".week07.IntentFilterActivity" -->
+        <!-- android:exported="true"/> -->
         <activity
                 android:name=".week06.AddVocActivity"
                 android:exported="true"/>
-        <!-- <activity -->
-        <!-- android:name=".week06.IntroActivity" -->
-        <!-- android:exported="true"/> -->
+        <activity
+                android:name=".week06.IntroActivity"
+                android:exported="true"/>
         <activity
                 android:name=".week06.ImplicitIntentActivity"
                 android:exported="true"/>
@@ -61,12 +76,14 @@
                 android:name=".week03.BmiActivity"
                 android:exported="true"/>
         <activity
-                android:name=".week06.IntroActivity"
+                android:name=".week07.IntentFilterActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.HOME"/>
             </intent-filter>
         </activity>
     </application>

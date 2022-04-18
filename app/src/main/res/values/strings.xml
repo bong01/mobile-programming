@@ -13,4 +13,5 @@
         <item>Belarus</item>
         <item>Belgium</item>
     </string-array>
+    <string name="permdescription">앱 리스트 권한</string>
 </resources>
