@@ -30,10 +30,17 @@ class LayoutDesignActivity : AppCompatActivity() {
 
     private fun initLayout() {
         for (id in checkedId) {
+            //체크 박스 정의
             val checkBox = findViewById<CheckBox>(id)
+
+            //체크 박스 체크 이벤트
             checkBox.setOnCheckedChangeListener { compoundButton, isChecked ->
+                //체크 박스 텍스트에 해당하는 이미지 Id를 res에서 찾기
                 val imgId = resources.getIdentifier(compoundButton.text.toString(), "id", packageName)
+                //찾은 이미지 Id로 이미지뷰 정의
                 val imageView = findViewById<ImageView>(imgId)
+
+                //체크 이벤트
                 if (isChecked) {
                     imageView.visibility = View.VISIBLE
                 } else {
