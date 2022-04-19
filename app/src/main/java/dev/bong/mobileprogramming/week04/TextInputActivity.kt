@@ -17,6 +17,8 @@ class TextInputActivity : AppCompatActivity() {
     private fun initLayout() {
         val textInputLayout = findViewById<TextInputLayout>(R.id.textInputLayout)
         val emailText = findViewById<TextInputEditText>(R.id.emailText)
+
+        //텍스트가 바뀔 때
         emailText.addTextChangedListener {
             if (it.toString().contains('@')) {
                 textInputLayout.error = null
