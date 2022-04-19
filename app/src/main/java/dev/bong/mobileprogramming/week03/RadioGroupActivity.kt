@@ -16,6 +16,8 @@ class RadioGroupActivity : AppCompatActivity() {
     fun init() {
         val radioGroup = findViewById<RadioGroup>(R.id.radioGroup)
         val imageView = findViewById<ImageView>(R.id.imageView)
+
+        //라디오버튼 체크 이벤트
         radioGroup.setOnCheckedChangeListener { radioGroup, checkedID ->
             when (checkedID) {
                 R.id.radioButton1 -> imageView.setImageResource(R.drawable.img1)
