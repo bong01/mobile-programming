@@ -15,6 +15,8 @@ class ToggleButtonActivity : AppCompatActivity() {
 
     fun init() {
         val toggleButton = findViewById<ToggleButton>(R.id.toggleButton)
+
+        //토글 버튼 체크 이벤트
         toggleButton.setOnCheckedChangeListener { compoundButton, isChecked ->
             if (isChecked) {
                 Toast.makeText(this, "Toggle On", Toast.LENGTH_SHORT).show()
