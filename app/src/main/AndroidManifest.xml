@@ -30,9 +30,34 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.MobileProgramming">
-        <!-- <activity -->
-        <!-- android:name=".week07.IntentFilterActivity" -->
-        <!-- android:exported="true"/> -->
+<!--        <activity-->
+<!--                android:name=".week09.FragmentPracticeActivity"-->
+<!--                android:exported="true"/>-->
+         <activity
+                 android:name=".week09.DynamicFragmentExActivity"
+                 android:exported="true"/>
+        <activity
+                android:name=".week09.DynamicFragmentActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".week09.FragmentSecondActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".week09.FragmentActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".week07.SecondActivity"
+                android:exported="true"
+                android:permission="dev.bong.mobileprogramming">
+            <intent-filter>
+                <action android:name="dev.bong.mobileprogramming"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".week07.IntentFilterActivity"
+                android:exported="true"/>
         <activity
                 android:name=".week06.AddVocActivity"
                 android:exported="true"/>
@@ -76,7 +101,7 @@
                 android:name=".week03.BmiActivity"
                 android:exported="true"/>
         <activity
-                android:name=".week07.IntentFilterActivity"
+                android:name=".week09.FragmentPracticeActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
