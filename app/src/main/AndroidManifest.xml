@@ -33,11 +33,14 @@
             android:theme="@style/Theme.MobileProgramming"
             android:usesCleartextTraffic="true">
 <!--        <activity-->
-<!--                android:name=".week10.MovieDataActivity"-->
+<!--                android:name=".week11.DbActivity"-->
 <!--                android:exported="true"/>-->
          <activity
-                 android:name=".week10.ParsingActivity"
+                 android:name=".week10.MovieDataActivity"
                  android:exported="true"/>
+        <activity
+                android:name=".week10.ParsingActivity"
+                android:exported="true"/>
         <activity
                 android:name=".week10.VolleyActivity"
                 android:exported="true"/>
@@ -115,7 +118,7 @@
                 android:name=".week03.BmiActivity"
                 android:exported="true"/>
         <activity
-                android:name=".week10.MovieDataActivity"
+                android:name=".week11.DbActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
