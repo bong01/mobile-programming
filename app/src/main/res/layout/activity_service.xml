@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical"
+        tools:context=".week15.ServiceActivity">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+        <Button
+                android:id="@+id/btnStartThread"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="StartThread"
+                android:layout_marginRight="10dp"/>
+
+        <Button
+                android:id="@+id/btnStopThread"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="StopThread"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+        <Button
+                android:id="@+id/btnStartService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="StartService"
+                android:layout_marginRight="10dp"/>
+
+        <Button
+                android:id="@+id/btnStopService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="StopService"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
